@@ -1,6 +1,6 @@
 {% for post in posts_collate %}
     {% if page.url == post.url %}
-        <li class="active"><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}<i class="icon-chevron-right"></i></a></li>
+        <li class="active"><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
     {% else %}
         <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
     {% endif %}
