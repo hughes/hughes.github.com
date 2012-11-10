@@ -1,12 +1,12 @@
 
+{% if page.tags == empty %}
 <h1>{{ page.title }}</h1>
-{% unless page.tags == empty %}
-  <h4>Tags</h4>
-  <ul class="tag_box">
+{% else %}
+<h1>{{ page.title }} <small>
   {% assign tags_list = page.tags %}
-  {% include JB/tags_list %}
-  </ul>
-{% endunless %}
+  {% include custom/tag_list %}
+</h1>
+{% endif %}
 <div class="row">
   <div class="span9">
     {{ content }}
