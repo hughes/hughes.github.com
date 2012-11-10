@@ -1,16 +1,22 @@
+
+<h1>{{ page.title }}</h1>
+{% unless page.tags == empty %}
+  <h4>Tags</h4>
+  <ul class="tag_box">
+  {% assign tags_list = page.tags %}
+  {% include JB/tags_list %}
+  </ul>
+{% endunless %}
+<hr />
 <div class="row">
   <div class="span9">
-    <h1>{{ page.title }} <small>{{ page.date | date_to_long_string }}</small></h1>
-    {% unless page.tags == empty %}
-      <h4>Tags</h4>
-      <ul class="tag_box">
-      {% assign tags_list = page.tags %}
-      {% include JB/tags_list %}
-      </ul>
-    {% endunless %}
-    <hr />
     {{ content }}
-    <hr />
+     <em>Posted {{ page.date | date_to_long_string }}</em>
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="span9">
     <div class="pagination">
       <ul>
       {% if page.previous %}
